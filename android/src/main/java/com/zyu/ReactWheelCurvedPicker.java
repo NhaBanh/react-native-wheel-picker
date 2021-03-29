@@ -28,6 +28,7 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
     private final EventDispatcher mEventDispatcher;
     private List<Integer> mValueData;
     private Integer mLineColor = Color.BLACK; // Default line color
+    private Integer mLineWidth = Color.BLACK; // Default line color
     private boolean isLineGradient = false;    // By default line color is not a gradient
     private Integer mLinegradientFrom = Color.BLACK; // Default starting gradient color
     private Integer mLinegradientTo = Color.WHITE; // Default end gradient color
@@ -60,8 +61,9 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
 
         Paint paint = new Paint();
         paint.setColor(this.mLineColor); // changed this from WHITE to BLACK
+        paint.setStrokeWidth(this.mLineWidth)
         if (this.isLineGradient) {
-            int colorFrom = this.mLinegradientFrom;
+            int colorFrom = this.mLinegradientFrom;z
             int colorTo = this.mLinegradientTo;
             LinearGradient linearGradientShader = new LinearGradient(rectCurItem.left, rectCurItem.top, rectCurItem.right/2, rectCurItem.top, colorFrom, colorTo, Shader.TileMode.MIRROR);
             paint.setShader(linearGradientShader);
@@ -73,6 +75,8 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
     public void setLineColor(Integer color) {
         this.mLineColor = color;
     }
+
+    public void setLineWidth(Integer width) { this.mLineWidth = width; }
 
     public void setLineGradientColorFrom (Integer color) {
         this.isLineGradient = true;
