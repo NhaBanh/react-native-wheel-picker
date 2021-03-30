@@ -61,9 +61,9 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
 
         Paint paint = new Paint();
         paint.setColor(this.mLineColor); // changed this from WHITE to BLACK
-        paint.setStrokeWidth(this.mLineWidth)
+        paint.setStrokeWidth(this.mLineWidth*1.0f)
         if (this.isLineGradient) {
-            int colorFrom = this.mLinegradientFrom;z
+            int colorFrom = this.mLinegradientFrom;
             int colorTo = this.mLinegradientTo;
             LinearGradient linearGradientShader = new LinearGradient(rectCurItem.left, rectCurItem.top, rectCurItem.right/2, rectCurItem.top, colorFrom, colorTo, Shader.TileMode.MIRROR);
             paint.setShader(linearGradientShader);
